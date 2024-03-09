@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { BlogModel } from 'src/app/models/blogs/blog.model';
 import { WidgetModel } from 'src/app/models/dashboard/widget.model';
 import { DashboardService } from 'src/app/services/dashboard.service';
 import { CommonService } from 'src/app/services/shared/common.service';
@@ -11,7 +12,7 @@ import { CommonService } from 'src/app/services/shared/common.service';
 })
 export class DashboardComponent {
   displayedColumns : any[] = ['id','title'];
-  lstPost : any;
+  lstPost : BlogModel[];
   lstWidgets: WidgetModel[] = [];
 
   cols : number = 4;
@@ -24,10 +25,11 @@ export class DashboardComponent {
     commonService.currentPageTitle = result!.menuTitle;
     commonService.currentPageSubTitle = result!.menuSubTitle;
     commonService.icon = result!.menuIcon;
+    this.dashboardSVC.postData$?.subscribe(result => this.lstPost = result);
   }
 
   ngOnInit(){
-    this.getAllPosts();
+    //this.getAllPosts();
     this.getAllWidgets();   
     
   }
