@@ -1,0 +1,45 @@
+
+
+<app-page-info-bar></app-page-info-bar>
+<div class="container responsive-grid">
+  <mat-card *ngFor="let widget of lstWidgets">
+    <mat-card-header>
+      <mat-card-title><mat-icon class="mat-icon-order">{{widget.icon}}</mat-icon></mat-card-title>
+    </mat-card-header>
+    <br />
+    <mat-card-content>
+      <div class="d-flex flex-row">
+        <p class="order-mat-text h2">{{widget.footerValue}}</p>
+      </div>
+      <div class="d-flex flex-row">
+        <p class="h5">{{widget.footer}}</p>
+      </div>
+      
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="container m-3 pr-2 container-recent-posts">
+  <div class="d-flex flex-row text-gray">
+    <mat-icon class="icon-color">dashboard</mat-icon>
+    <span class="m-1">Recent Blogs</span>
+  </div>
+
+  <div class="container responsive-grid-posts">
+    <mat-card *ngFor="let blog of lstPost">
+      <mat-card-content *ngFor="let blog of lstPost">
+        <div>
+          <img src='https://wallpapers.com/images/hd/4k-mountain-l3f04sogeaabr5h0.jpg' class="card-img" />
+        </div>
+        <div style="padding: 10px;">
+          <p class="h5">{{blog.title}}</p>
+          <p>{{blog.body}}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
+
+
+

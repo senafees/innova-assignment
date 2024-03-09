@@ -1,0 +1,25 @@
+<app-page-info-bar></app-page-info-bar>
+
+<div class="container responsive-grid">
+    <mat-card *ngFor="let blog of lstBlogs" class="round-mat-card" mat-elevation-z1>
+      <mat-card-content>
+        <div style="display: inline-flex;">
+            <div class="col-md-6">
+                <img src='https://wallpapers.com/images/hd/4k-mountain-l3f04sogeaabr5h0.jpg' class="card-img" />
+            </div>
+          <div class="col-md-6" style="padding: 10px;">
+            <p class="h5">{{blog.title}}</p>
+            <p>{{blog.body}}</p>
+            <p> <a href="#">Read More</a></p>
+            <div>
+                
+                <span><mat-icon class="icon-color">timer</mat-icon> 22 july 2024</span>
+                <span><mat-icon class="icon-color">person</mat-icon> alex</span>
+                
+            </div>
+          </div>
+        </div>
+        
+      </mat-card-content>
+    </mat-card>
+ </div>

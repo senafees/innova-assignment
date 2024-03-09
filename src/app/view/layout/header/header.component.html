@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" [class.mat-elevation-z3]="true">
+    <button mat-icon-button matTooltip="Menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <span class="toolbar-item-spacer"></span>
+    <button mat-icon-button matTooltip="Notifications">
+        <mat-icon>notifications</mat-icon>
+    </button>
+
+    <button mat-icon-button matTooltip="Account" [matMenuTriggerFor]="userAccountMenu">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #userAccountMenu [overlapTrigger]="false" yPosition="below">
+        <buton mat-menu-item routerLink="#">
+            <mat-icon>person</mat-icon><span>My Account</span>
+        </buton><buton mat-menu-item routerLink="#">
+            <mat-icon>settings</mat-icon><span>Settings</span>
+        </buton>
+    </mat-menu>
+
+</mat-toolbar>

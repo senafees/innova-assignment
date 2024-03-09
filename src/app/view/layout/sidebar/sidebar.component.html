@@ -1,0 +1,27 @@
+<mat-sidenav-container class="app-container">
+    <mat-sidenav #sidenav opened="true" class="app-sidenav" mode="side" [class.mat-elevation-z3]="true">
+        <mat-nav-list *ngFor="let menu of menus">
+            <button mat-button class="menu-button" routerLink="{{menu.action}}" routerLinkActive
+            #routerLinkActiveInstance="routerLinkActive"
+            [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1"
+            [class.list-item-active]="routerLinkActiveInstance.isActive">
+                <mat-icon>{{menu.menuIcon}}</mat-icon>
+                <span>{{menu.menuNama}}</span>
+            </button>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    
+    <mat-toolbar color="primary" class="toolbar-header" [class.mat-elevation-z1]="true">
+        <div class="h3 header-text">Innova Digital</div>
+        <!-- <button mat-icon-button (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+        </button> -->
+    </mat-toolbar>
+
+    <div class="body-cont">
+        <router-outlet></router-outlet>
+    </div>
+    
+
+</mat-sidenav-container>
